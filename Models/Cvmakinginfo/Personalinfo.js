@@ -1,47 +1,48 @@
 const mongoose = require("mongoose");
 
-const personalInfo = new mongoose.Schema({
+const personalinfoSchema = new mongoose.Schema({
     name:{
         type:String,
-        require:true
+        required:true
     },
     surname:{
         type:String,
-        require:true
+        required:true
     },
-    adress:{
+    address:{
         type:String,
-        require:true
+        required:true
     },
     postalcode:{
         type:Number,
-        require:true
+        required:true
     },
     country:{
         type:String,
-        require:true
+        required:true
     },
     number:{
         type:Number,
-        require:true
+        required:true
     },
     email:{
         type:String,
-        require:true
+        required:true
     },
     facebook:{
         type:String,
-        require:false
+        required:false
     },
     linkedin:{
         type:String,
-        require:false
+        required:false
     },
     website:{
         type:String,
-        require:false
+        required:false
     }
 })
 
-const personalinfoSchema = mongoose.model('personalinfos',personalInfo);
+
+
 module.exports = personalinfoSchema;

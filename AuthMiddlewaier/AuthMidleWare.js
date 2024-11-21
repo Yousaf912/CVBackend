@@ -9,6 +9,7 @@ const authmiddleLayer = async (req, res, next) => {
         if (jwtToken == 'null') {
             return res.status(401).send({ message: 'Please firsr login' });
         }
+       
         const checkIsVerified = await jwt.verify(jwtToken, securitykey);
         req.user = checkIsVerified;
         next();

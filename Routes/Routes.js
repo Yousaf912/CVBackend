@@ -11,6 +11,9 @@ const router = express.Router();
 router.post('/signup',Zodvalidation(SignupZodSchema), AUthControler.signup);
 router.post('/login',AUthControler.login);
 router.get('/makeResume',authmiddleLayer, AUthControler.makeresume);
-router.put('/:userid',cvDataInfo.personalinfo)
+router.put('/userid/:userid',cvDataInfo.addtemplate);
+router.put('/personalinfo/:userid',cvDataInfo.personalinfo);
+router.put('/education/:userid',cvDataInfo.education);
+
 
 module.exports =router
