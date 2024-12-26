@@ -37,7 +37,9 @@ const AUthControler = {
                     res.status(401).send({ message: 'Wrong Password' })
                 } else {
                     res.status(201).send({
-                        token: await jwt.sign({ ...findUser },securitykey)
+                        token: await jwt.sign({ ...findUser },securitykey,{
+                            expiresIn:'1d'
+                        })
                     })
                 }
             }
